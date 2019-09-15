@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 @WebServlet(urlPatterns = {"/servletToServlet", "/servletCommunication"})
 public class ServletToServlet extends HttpServlet {
     private static final Logger logger = Logger.getLogger(ServletToServlet.class.getSimpleName());
-    private static final String SERVER_ADDRESS = "http://localhost:8080/servlets/randomJson";
+    private static final String SERVER_ADDRESS = "http://localhost:8080/servlets01/randomJson";
     private static final String PARAMETR = "giveRandomNumber";
     private static final String EXPECTED_VALUE = "true";
 
@@ -34,6 +34,7 @@ public class ServletToServlet extends HttpServlet {
     private String getRandomNumber() throws IOException {
         URL url = new URL(SERVER_ADDRESS);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
 
         connection.connect();
         logger.info("Response code: " + connection.getResponseCode());
