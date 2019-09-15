@@ -16,7 +16,7 @@ public class RandomJson extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter writer = response.getWriter();
         response.setContentType("application/json");
-        Random random = new Random ();
+        Random random = new Random();
         writer.println(random.nextInt());
     }
 }
