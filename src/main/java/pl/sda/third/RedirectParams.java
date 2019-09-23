@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
 @WebServlet("/redirect")
-public class RedirectParms extends HttpServlet {
+public class RedirectParams extends HttpServlet {
 
     public static final String REDIRECT_PARAMETER = "name";
 
@@ -18,5 +19,6 @@ public class RedirectParms extends HttpServlet {
         request.getRequestDispatcher("/finalServlet")
                 .forward(request, response);
     }
+
 
 }
